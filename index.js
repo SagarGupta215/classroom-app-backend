@@ -7,7 +7,10 @@ const mainRouter = require('./routes/index')
 const app = express()
 const PORT = process.env.PORT || 3500
 
-app.use(cors())
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://classroom-app-frontend-navy.vercel.app'],
+    credentials: true
+}))
 
 app.use(express.json())
 
